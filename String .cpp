@@ -19,5 +19,5 @@ bool is_a_sub_string (string sub , string x){
         else i = (sub[0] == x[j]);
         j++;
     }
-    return 0;
+    return i == sub.length();
 }
