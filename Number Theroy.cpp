@@ -94,3 +94,45 @@ int greatestDiv (int n)
     }       
     return 1;   
 }
+/***************************************/
+int sumBettwen_A_B(int a, int b){
+    if(a < b)swap(a,b);
+    return (a * (a+1) / 2 ) - (b * (b-1) / 2);
+}
+int sumEvens(int x , int y){
+    if(x>y) swap(x,y);
+    return (y/2) * (y/2 +1) - ((x-1)/2) * ((x-1)/2 +1);
+}
+int sumOdds(int x , int y){
+    if(x>y) swap(x,y);
+    return ((y+1)/2) * ((y+1)/2)  -  (x/2) * (x/2);
+}
+/***************************************/
+int comb (int n ,int r){
+    vector<int> facn , facr;// factorial n , r
+    for(int i = n ; i > n-r ; i--)
+        facn.push_back(i);
+    for(int i = 1; i <= r; i++)
+        facr.push_back(i);
+    int ret = 1;map<int,int> vis;
+    for(int i = 0 ; i< facn.size() ; i++){
+        ret *= facn[i];
+        int div = 0;
+        for(int j= 0 ; j < facr.size();j++){
+            if(ret%facr[j] == 0 && !vis[facr[j]])
+                div = facr[j];
+        }
+        if(div){
+            vis[div]++;
+            ret/= div;
+        }
+        else break;
+    }    
+    return ret;
+}
+int perm (int n ,int r){
+    int ret = 1;
+    for(int i = n; i > n-r ;i--)ret *= i;
+    return ret;
+}
+/***************************************/
