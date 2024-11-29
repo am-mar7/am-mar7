@@ -1,4 +1,8 @@
- bool isPrime (int n)
+//to control the number of digits after the decimal dot we use
+//  fixed<<setprecision(9)<<d;
+
+/***************************************/
+bool isPrime (int n)
 {
     if (n == 2) return true;
     if (n < 2 || n%2 == 0) return false;
