@@ -39,6 +39,10 @@ int GCD (int x,int y)
     }
     return ans ;
 }
+int GCD2 (int a,int z){
+    if(z == 0)return a;
+    return GCD(z , a%z)
+}
 int LCM(int x,int y)
 {
     return x /GCD(x,y)*y;
