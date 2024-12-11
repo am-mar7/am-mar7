@@ -147,5 +147,10 @@ int perm (int n ,int r){
 int fastPower (int base , int power){
     if(power == 0)return 1;
     if(power == 1)return base;
-    return fastPower(base,power/2)* fastPower(base,power - power/2);
+
+    int result = fastPower(base,power/2);
+    result *= result;
+    
+    if(power%2)result *= base;
+    return result;
 }
