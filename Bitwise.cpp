@@ -16,3 +16,14 @@ int flibBit (int n, int i){
 bool isPowerofTwo(int n){
     return !(n&(n-1));
 }
+/*******************************/
+string convert_to_binary(int n){
+    if(n == 0)return "0";
+    string ret = "";
+    while(n > 0){
+        ret = to_string(n%2) + ret;
+        n /=2;
+    }
+    return ret;
+} 
+/*******************************/
