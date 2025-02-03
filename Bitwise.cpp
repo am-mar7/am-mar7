@@ -27,3 +27,23 @@ string convert_to_binary(int n){
     return ret;
 } 
 /*******************************/
+int get_log (int base , int num){
+    int x = 1;int ret = 0;
+    while(x < num){
+        x *= base;
+        ret ++;
+    }
+    if(x > num)ret--;
+    return ret;
+}
+/*******************************/
+int XORtoN(int n)
+{
+    int mod = n % 4;
+    if (mod == 0) return n;
+    else if (mod == 1) return 1;
+    else if (mod == 2) return n + 1;
+    return 0;
+
+}
+/*******************************/
