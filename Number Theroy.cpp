@@ -154,3 +154,37 @@ int fastPower (int base , int power){
     if(power%2)result *= base;
     return result;
 }
+/***************************************/
+vector<pair<int,int>> primeFactors (int n){ 
+    vector<pair<int,int>> ret;
+    int b  = 2, pw = 0;
+    while(n % 2 == 0){
+        pw ++;
+        n /= 2;
+    } 
+    if(pw) 
+        ret.push_back({b,pw});
+    for (int i = 3 ; i*i <=n ; i+= 2){
+        pw = 0 , b = i; 
+        while(n % i == 0){
+            n /= i;
+            pw ++;
+        }    
+        if(pw)
+            ret.push_back({b,pw});
+        if (n == 1)break;
+    }
+    if (n > 1) ret.push_back({n,1});
+    return ret;
+}
+/***************************************/
+vector<int> primesToN (int n){ // sieve approch
+    vector<int> isprime(n+1 , 1);
+    vector<int> ret;
+    for(int i = 2 ; i <= n; i++)    if(isprime[i]){
+        ret.push_back(i);
+        for(int j = i+i ; j <= n ; j+= i)
+            isprime[j] = 0;
+    }   
+    return ret;
+} 
