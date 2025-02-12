@@ -25,21 +25,14 @@ int countDivisors (int n)
 }
 
 /***************************************/
-int gcd (int x,int y)
-{
-    if(x <y) swap(x,y);
-    int rem = 0; int ans = y;
-    while (true)
-    {
-        rem =  x%y;
-        x = y; y = rem;
-        if(rem == 0)
-        break;
-        ans = rem;
+int gcd (int a, int b) { // non recursive approch
+    while (b) {
+        a %= b;
+        swap(a, b);
     }
-    return ans ;
+    return a;
 }
-int GCD (int a, int b) {
+int GCD (int a, int b) { // recursive approach
     return b ? gcd (b, a % b) : a;
 }
 int LCM(int x,int y)
