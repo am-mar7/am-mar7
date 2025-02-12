@@ -33,7 +33,7 @@ int gcd (int a, int b) { // non recursive approch
     return a;
 }
 int GCD (int a, int b) { // recursive approach
-    return b ? gcd (b, a % b) : a;
+    return b ? GCD (b, a % b) : a;
 }
 int LCM(int x,int y)
 {
