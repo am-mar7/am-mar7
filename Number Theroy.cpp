@@ -25,7 +25,7 @@ int countDivisors (int n)
 }
 
 /***************************************/
-int GCD (int x,int y)
+int gcd (int x,int y)
 {
     if(x <y) swap(x,y);
     int rem = 0; int ans = y;
@@ -39,9 +39,8 @@ int GCD (int x,int y)
     }
     return ans ;
 }
-int GCD2 (int a,int z){
-    if(z == 0)return a;
-    return GCD(z , a%z)
+int GCD (int a, int b) {
+    return b ? gcd (b, a % b) : a;
 }
 int LCM(int x,int y)
 {
