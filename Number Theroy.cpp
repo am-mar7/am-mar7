@@ -198,3 +198,32 @@ int modInverse (int a , int m){
         return (x + m)%m;
     return -1;    
 }
+/***************************************/
+__int128_t readINT128(){
+    string s;
+    cin >> s;
+    __int128_t num = 0;
+    bool neg = (s[0] == '-');  // Check if negative
+    for (int i = neg; i < s.size(); i++) {
+        num = num * 10 + (s[i] - '0');
+    }
+    return neg ? -num : num;;
+}
+/***************************************/
+void printINT128(__int128_t num){
+    if (num == 0) {
+        cout << "0" << endl;
+        return;
+    }
+    if (num < 0) {
+        cout << "-";
+        num = -num;
+    }
+    string s;
+    while (num > 0) {
+        s += '0' + (num % 10);
+        num /= 10;
+    }
+    reverse(s.begin(), s.end());
+    cout << s<< endl;
+}
