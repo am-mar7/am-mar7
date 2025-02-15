@@ -41,37 +41,7 @@ int LCM(int x,int y)
 }
 
 /***************************************/
-vector<int> primefactors (int n)
-{
-    vector<int> v;
-    while (n%2 ==0)
-    {
-        v.push_back(2);
-        n/=2;
-    }
-    for (int i = 3; i*i <= n; i+=2)
-    {
-        while (n%i ==0)
-        {
-            v.push_back(i);
-            n/=i;
-        }       
-    }
-    if(n > 1) v.push_back(n);
-    return v;   
-}
-/***************************************/
-bool almostprime (int n)
-{
-    int dpd = 0;
-    if(n%2 ==0) dpd++;    
-    for(int i = 3; i < n;i+=2)
-        if(isPrime(i) && n%i == 0) dpd++;
-    return dpd == 2;  
-}
-/***************************************/
-vector<int> Divisors (int n)
-{
+vector<int> Divisors (int n){
     vector<int> v;
     for (int i = 1; i*i <= n; i++)
     {
@@ -83,16 +53,6 @@ vector<int> Divisors (int n)
         }
     }
     return v;   
-}
-/***************************************/
-int greatestDiv (int n)
-{
-    for (int i = 2; i*i <= n; i++)
-    {
-        if(n%i == 0)
-            return n/i;
-    }       
-    return 1;   
 }
 /***************************************/
 int sumBettwen_A_B(int a, int b){
@@ -226,4 +186,15 @@ void printINT128(__int128_t num){
     }
     reverse(s.begin(), s.end());
     cout << s<< endl;
+}
+/***************************************/
+int countUniqueSubsequences(vector<int>& nums) {
+    map<int, int> freq;
+    for (int num : nums) freq[num]++;
+
+    long long result = 1; 
+    for (auto it : freq) {
+        result *= (it.second + 1);
+    }
+    return result -1; // remove empty Subsequence 
 }
