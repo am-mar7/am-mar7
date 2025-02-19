@@ -198,3 +198,8 @@ int countUniqueSubsequences(vector<int>& nums) {
     }
     return result -1; // remove empty Subsequence 
 }
+/***************************************/
+int sumWithStep(int n, int k) {
+    int m = (n - 1) / k + 1; 
+    return (m * (2 + (m - 1) * k)) / 2; 
+}
