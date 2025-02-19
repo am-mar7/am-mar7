@@ -203,3 +203,8 @@ int sumWithStep(int n, int k) {
     int m = (n - 1) / k + 1; 
     return (m * (2 + (m - 1) * k)) / 2; 
 }
+/***************************************/
+int sumOfMultiples(int n, int k) {
+    int m = n / k; // Number of terms
+    return k * m * (m + 1) / 2; // Apply formula
+}
