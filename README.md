@@ -108,9 +108,9 @@ Web-based dental CBCT imaging and implant-planning platform. Contributed to the 
     <td width="50%" valign="top">
 
 ### 💬 Whispyr
-A CRM as a SaaS product. Contributed to the platform.
+A feature-packed CRM delivered as SaaS, with **agentic AI** built into the product. Contributed to the platform: a **Next.js** frontend served through **Cloudflare's CDN**, backed by a **NestJS** API running on a custom-configured **VPS**.
 
-`CRM` `SaaS`
+`Next.js` `NestJS` `Agentic AI` `Cloudflare` `VPS` `SaaS`
 
 </td>
   </tr>
